@@ -1,0 +1,185 @@
+
+mysql> select * from Team;
++--------+-----------------+-------------+
+| TeamId | Name            | FoundedDate |
++--------+-----------------+-------------+
+|      1 | ManU            | 1990-05-15  |
+|      2 | Barcelona       | 1991-09-10  |
+|      3 | Chelsea         | 1990-10-19  |
+|      4 | Arsenal         | 1995-01-29  |
+|      5 | Crystal Palace  | 1997-08-29  |
+|      6 | Liverpool       | 1997-08-20  |
+|      7 | Manchester City | 1990-09-02  |
+|      8 | Watford         | 1996-09-05  |
+|      9 | Everton         | 1998-10-05  |
+|     10 | Real Madrid     | 1992-01-05  |
++--------+-----------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> select * from Player;
++----------+-------------------------------------+---------+------+--------+--------+--------+
+| PlayerId | Name                                | JersyNo | Age  | Salary | TeamId | Height |
++----------+-------------------------------------+---------+------+--------+--------+--------+
+|        1 | David De Gea                        |       1 |   29 | 500000 |      1 |      2 |
+|        2 | Paul Pogba                          |       6 |   27 | 400000 |      1 |      2 |
+|        3 | Luke Shaw                           |      23 |   25 | 300000 |      1 |      2 |
+|        4 | Marcus Rashford                     |      10 |   22 | 400000 |      1 |      2 |
+|        5 | Marcos Rojo                         |      16 |   30 | 200000 |      1 |      2 |
+|        6 | Messi                               |      10 |   33 | 900000 |      2 |      2 |
+|        7 | Ivan Rakitic                        |       4 |   32 | 500000 |      2 |      2 |
+|        8 | Sergi roberto                       |      20 |   28 | 500000 |      2 |      2 |
+|        9 | Norberto Murara Neto                |      13 |   30 | 500000 |      2 |      2 |
+|       10 | Luis arez                           |       9 |   33 | 800000 |      2 |      2 |
+|       11 | Olivier Giroud                      |      18 |   33 | 800000 |      3 |      2 |
+|       12 | Willian Borges Da Silva             |      10 |   31 | 700000 |      3 |      2 |
+|       13 | Ross Barkley                        |       8 |   26 | 700000 |      3 |      2 |
+|       14 | Marcos Alonso                       |       3 |   29 | 700000 |      3 |      2 |
+|       15 | willy Caballero                     |      13 |   33 | 700000 |      3 |      2 |
+|       16 | Alexandre Lacazette                 |       9 |   29 | 700000 |      4 |      2 |
+|       17 | Granit Xhaka                        |      34 |   27 | 700000 |      4 |      2 |
+|       18 | Calum Chambers                      |      21 |   25 | 700000 |      4 |      2 |
+|       19 | Hector Bellerin                     |       2 |   25 | 600000 |      4 |      2 |
+|       20 | Matt Macey                          |      33 |   25 | 600000 |      4 |      2 |
+|       21 | Wilfried Zaha                       |      11 |   27 | 600000 |      5 |      2 |
+|       22 | James McCarthy                      |      22 |   29 | 600000 |      5 |      2 |
+|       23 | Max Meyer                           |       7 |   24 | 600000 |      5 |      2 |
+|       24 | Martin Kelly                        |      34 |   30 | 600000 |      5 |      2 |
+|       25 | Gary Cahill                         |      24 |   34 | 600000 |      5 |      2 |
+|       26 | Roberto Firmino Barbosa de Oliveria |       9 |   28 | 500000 |      6 |      2 |
+|       27 | Takumi Minamino                     |      18 |   25 | 400000 |      6 |      2 |
+|       28 | Marko Grujic                        |      16 |   24 | 400000 |      6 |      2 |
+|       29 | Dejan Lovren                        |       6 |   31 | 300000 |      6 |      2 |
+|       30 | Alisson Ramses Becker               |       1 |   27 | 400000 |      6 |      2 |
+|       31 | Riyad Mahrez                        |      26 |   29 | 600000 |      7 |      2 |
+|       32 | Gabriel Fernando de Jesus           |       9 |   23 | 600000 |      7 |      2 |
+|       33 | David Silva                         |      22 |   34 | 600000 |      7 |      2 |
+|       34 | Aymeric Laporte                     |      14 |   26 | 600000 |      7 |      2 |
+|       35 | Ederson Santana de Moraes           |      31 |   26 | 600000 |      7 |      2 |
+|       36 | Tammy Abraham                       |       9 |   22 | 600000 |      8 |      2 |
+|       37 | Max Aarons                          |       2 |   20 | 400000 |      8 |      2 |
+|       38 | Adrien Silva                        |      23 |   31 | 400000 |      8 |      2 |
+|       39 | Alisson                             |       1 |   27 | 400000 |      8 |      2 |
+|       40 | Josh Brownhill                      |       8 |   24 | 300000 |      8 |      2 |
+|       41 | Jordan Pickford                     |       1 |   26 | 300000 |      9 |      2 |
+|       42 | Leighton Baines                     |       3 |   25 | 300000 |      9 |      2 |
+|       43 | Fabian Delph                        |       8 |   30 | 300000 |      9 |      2 |
+|       45 | Theo Walcott                        |      11 |   31 | 400000 |      9 |      2 |
+|       46 | Thibaut Courtois                    |      13 |   28 | 400000 |     10 |      2 |
+|       47 | Daniel Carvajal Ramos               |       2 |   28 | 300000 |     10 |      2 |
+|       48 | Marcelo Vieira Da Silva Junior      |      12 |   32 | 300000 |     10 |      2 |
+|       49 | Toni Kroos                          |       8 |   30 |      0 |     10 |      2 |
+|       50 | Marco Asensio                       |      20 |   23 |      0 |     10 |      2 |
++----------+-------------------------------------+---------+------+--------+--------+--------+
+49 rows in set (0.00 sec)
+
+mysql> select * from Player where TeamId=2;
++----------+----------------------+---------+------+--------+--------+--------+
+| PlayerId | Name                 | JersyNo | Age  | Salary | TeamId | Height |
++----------+----------------------+---------+------+--------+--------+--------+
+|        6 | Messi                |      10 |   33 | 900000 |      2 |      2 |
+|        7 | Ivan Rakitic         |       4 |   32 | 500000 |      2 |      2 |
+|        8 | Sergi roberto        |      20 |   28 | 500000 |      2 |      2 |
+|        9 | Norberto Murara Neto |      13 |   30 | 500000 |      2 |      2 |
+|       10 | Luis arez            |       9 |   33 | 800000 |      2 |      2 |
++----------+----------------------+---------+------+--------+--------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from Player where salary>700000;
++----------+----------------+---------+------+--------+--------+--------+
+| PlayerId | Name           | JersyNo | Age  | Salary | TeamId | Height |
++----------+----------------+---------+------+--------+--------+--------+
+|        6 | Messi          |      10 |   33 | 900000 |      2 |      2 |
+|       10 | Luis arez      |       9 |   33 | 800000 |      2 |      2 |
+|       11 | Olivier Giroud |      18 |   33 | 800000 |      3 |      2 |
++----------+----------------+---------+------+--------+--------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select Name,(select sum(salary) from Player where Player.TeamId=Team.TeamId) as TotalSalary from Team;
++-----------------+-------------+
+| Name            | TotalSalary |
++-----------------+-------------+
+| ManU            |     1800000 |
+| Barcelona       |     3200000 |
+| Chelsea         |     3600000 |
+| Arsenal         |     3300000 |
+| Crystal Palace  |     3000000 |
+| Liverpool       |     2000000 |
+| Manchester City |     3000000 |
+| Watford         |     2100000 |
+| Everton         |     1300000 |
+| Real Madrid     |     1000000 |
++-----------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> select * from Player where Height<1.80;
+Empty set (0.00 sec)
+
+mysql> select Name,(select avg(salary) from Player where Player.TeamId=Team.TeamId) as AverageSalary from Team;
++-----------------+---------------+
+| Name            | AverageSalary |
++-----------------+---------------+
+| ManU            |   360000.0000 |
+| Barcelona       |   640000.0000 |
+| Chelsea         |   720000.0000 |
+| Arsenal         |   660000.0000 |
+| Crystal Palace  |   600000.0000 |
+| Liverpool       |   400000.0000 |
+| Manchester City |   600000.0000 |
+| Watford         |   420000.0000 |
+| Everton         |   325000.0000 |
+| Real Madrid     |   200000.0000 |
++-----------------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> select Name,Salary from Player where salary in(select min(salary) from Player);
++---------------+--------+
+| Name          | Salary |
++---------------+--------+
+| Toni Kroos    |      0 |
+| Marco Asensio |      0 |
++---------------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select Name,Salary from Player where salary in(select max(salary) from Player);
++-------+--------+
+| Name  | Salary |
++-------+--------+
+| Messi | 900000 |
++-------+--------+
+1 row in set (0.00 sec)
+
+mysql> select Name from Player where Age>20 and Salary>700000;
++----------------+
+| Name           |
++----------------+
+| Messi          |
+| Luis arez      |
+| Olivier Giroud |
++----------------+
+3 rows in set (0.00 sec)
+
+mysql> select Name from Player where Name like "m%";
++--------------------------------+
+| Name                           |
++--------------------------------+
+| Marcus Rashford                |
+| Marcos Rojo                    |
+| Messi                          |
+| Marcos Alonso                  |
+| Matt Macey                     |
+| Max Meyer                      |
+| Martin Kelly                   |
+| Marko Grujic                   |
+| Max Aarons                     |
+| Marcelo Vieira Da Silva Junior |
+| Marco Asensio                  |
++--------------------------------+
+11 rows in set (0.00 sec)
+
+mysql> select Name from Team where FoundedDate="1990-10-19";
++---------+
+| Name    |
++---------+
+| Chelsea |
++---------+
+1 row in set (0.00 sec)
