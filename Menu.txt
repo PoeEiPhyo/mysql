@@ -1,0 +1,77 @@
+
+mysql> select * from menu;
++--------+----------+---------------+
+| MenuId | Name     | Description   |
++--------+----------+---------------+
+|      1 | Juice    | I am Juice    |
+|      2 | Coffee   | I am Coffee   |
+|      3 | IceCream | I am IceCream |
++--------+----------+---------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from food;
++--------+---------------------+-------+--------+
+| FoodId | Name                | Price | MenuId |
++--------+---------------------+-------+--------+
+|      1 | Strawberry Juice    |  1000 |      1 |
+|      2 | Orange Juice        |  1000 |      1 |
+|      3 | Lemon Juice         |  1000 |      1 |
+|      4 | Pineapple Juice     |  1000 |      1 |
+|      5 | Espesso             |  1500 |      2 |
+|      6 | Latte               |  1500 |      2 |
+|      7 | IceCoffee           |  1500 |      2 |
+|      8 | BlackCoffee         |  1500 |      2 |
+|      9 | Strawberry IceCream |   900 |      3 |
+|     10 | Chocolate IceCream  |  1000 |      3 |
+|     11 | Milk IceCream       |   500 |      3 |
++--------+---------------------+-------+--------+
+11 rows in set (0.00 sec)
+
+mysql> select * from Orders;
++---------+------------+------+-------+------------+--------+
+| OrderId | Sale_Date  | Qty  | Price | TotalPrice | FoodId |
++---------+------------+------+-------+------------+--------+
+|       1 | 2020-01-01 |    4 |  1000 |       4000 |      1 |
+|       2 | 2020-02-13 |    5 |   900 |       4500 |      9 |
+|       3 | 2020-03-03 |    1 |  1500 |       1500 |      5 |
+|       4 | 2020-05-09 |    2 |  1000 |       2000 |      2 |
+|       5 | 2020-06-01 |    3 |  1500 |       4500 |      7 |
++---------+------------+------+-------+------------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select Food.Name,Orders.TotalPrice from Orders,Food where Orders.FoodId=Food.FoodId and TotalPrice in (select max(TotalPrice) from Orders);
++---------------------+------------+
+| Name                | TotalPrice |
++---------------------+------------+
+| Strawberry IceCream |       4500 |
+| IceCoffee           |       4500 |
++---------------------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select Food.Name,Orders.TotalPrice from Orders,Food where Orders.FoodId=Food.FoodId and TotalPrice in (select min(TotalPrice) from Orders);
++---------+------------+
+| Name    | TotalPrice |
++---------+------------+
+| Espesso |       1500 |
++---------+------------+
+1 row in set (0.00 sec)
+
+mysql> select Orders.Sale_Date,sum(TotalPrice) as Sale_Amount from Orders group by Sale_Date;
++------------+-------------+
+| Sale_Date  | Sale_Amount |
++------------+-------------+
+| 2020-01-01 |        4000 |
+| 2020-02-13 |        4500 |
+| 2020-03-03 |        1500 |
+| 2020-05-09 |        2000 |
+| 2020-06-01 |        4500 |
++------------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> select sum(TotalPrice) from Orders where Sale_Date between '2020-1-1' and '2020-3-29';
++-----------------+
+| sum(TotalPrice) |
++-----------------+
+|           10000 |
++-----------------+
+1 row in set (0.00 sec)
